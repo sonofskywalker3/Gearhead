@@ -12,7 +12,7 @@ import urllib.request
 import xml.etree.ElementTree
 
 SCRIPT_PATH = pathlib.Path(os.path.dirname(os.path.realpath(__file__)))
-token = ''
+token = 'NDY3MzI2MTYwMDA3NzI1MDY4.Dio-_w.fCDcRIDXpxnV_1hf0cQXlzKGmWI'
 update_frequency = 60 * 10
 
 class GameUpdate:
@@ -107,8 +107,8 @@ bot = commands.Bot('!')
 async def update():
     print('Checking for updates...')
 
-    channel = discord.utils.get(bot.get_all_channels(), name='information-submission')
-    updates = get_updates(['NSW-BigBlueBox', 'NSW-HR', 'NSW-LiGHTFORCE'])
+    channel = discord.utils.get(bot.get_all_channels(), name='general')
+    updates = get_updates(['NSW'])
 
     if not updates:
         print('No updates found.')
