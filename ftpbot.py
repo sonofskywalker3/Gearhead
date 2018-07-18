@@ -48,7 +48,7 @@ class GameInfo:
 
     def __retrieve_rss_feed(self, search):
         params = urllib.parse.urlencode({'rss': 1, 'search': search})
-        url = 'ftp://listfiles:HhTMPFUTBygjQjyXXsgP@orion.feralhosting.com/?{}'.format(params)
+        url = url.format(params)
         request = urllib.request.Request(url, data=None, headers={
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
         })
