@@ -8,3 +8,9 @@ do
   PAYLOAD="{\"content\":\"$file\"}"
    curl -H "Content-Type: application/json" -X POST -d $PAYLOAD $URL; 
 done
+
+inotifywait --monitor --format %f -e moved_to -e create ~/NSW/"0001 - (NSW eShop)"/NSP | while read file; 
+do
+  PAYLOAD="{\"content\":\"$file\"}"
+   curl -H "Content-Type: application/json" -X POST -d $PAYLOAD $NSPURL; 
+done
