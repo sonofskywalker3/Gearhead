@@ -40,7 +40,7 @@ class GameInfo:
 
     def __retrieve_rss_feed(self, search):
         params = urllib.parse.urlencode({'rss': 1, 'search': search})
-        url = 'https://predb.me/?{}'.format(params)
+        url = 'sftp://listfiles:HhTMPFUTBygjQjyXXsgP@orion.feralhosting.com/?{}'.format(params)
         request = urllib.request.Request(url, data=None, headers={
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
         })
@@ -108,7 +108,7 @@ async def update():
     print('Checking for updates...')
 
     channel = discord.utils.get(bot.get_all_channels(), name='pre-database')
-    updates = get_updates(['NSW'])
+    updates = get_updates(['nsp', 'xci', 'zip', 'exe'])
 
     if not updates:
         print('No updates found.')
