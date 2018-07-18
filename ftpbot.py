@@ -9,6 +9,7 @@ import pathlib
 import sys
 import urllib.parse
 import urllib.request
+import urllib3
 import xml.etree.ElementTree
 
 SCRIPT_PATH = pathlib.Path(os.path.dirname(os.path.realpath(__file__)))
