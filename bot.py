@@ -12,7 +12,7 @@ import urllib.request
 import xml.etree.ElementTree
 
 SCRIPT_PATH = pathlib.Path(os.path.dirname(os.path.realpath(__file__)))
-token = 'NDY3MzI2MTYwMDA3NzI1MDY4.Dio-_w.fCDcRIDXpxnV_1hf0cQXlzKGmWI'
+token = ''
 update_frequency = 60 * 10
 
 class GameUpdate:
@@ -107,7 +107,7 @@ bot = commands.Bot('!')
 async def update():
     print('Checking for updates...')
 
-    channel = discord.utils.get(bot.get_all_channels(), name='general')
+    channel = discord.utils.get(bot.get_all_channels(), name='pre-database')
     updates = get_updates(['NSW'])
 
     if not updates:
