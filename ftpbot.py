@@ -38,6 +38,13 @@ class GameInfo:
             self.__retrieve_rss_feed(self.name)
             self.__read_from_xml()
             self.__calculate_sha256()
+            
+    # Read config
+    with open(pathlib.Path(SCRIPT_PATH, 'config.json'), 'r') as f:
+    data = json.load(f)
+    token = data['token']
+    update_frequency = data['update_frequency']
+    url = data['url']
 
     def __retrieve_rss_feed(self, search):
         params = urllib.parse.urlencode({'rss': 1, 'search': search})
@@ -152,11 +159,5 @@ bot.add_cog(InfoCheck(bot))
 bot.loop.create_task(auto_update_check())
 
 print('Running...')
-
-# Read config
-with open(pathlib.Path(SCRIPT_PATH, 'config.json'), 'r') as f:
-    data = json.load(f)
-    token = data['token']
-    update_frequency = data['update_frequency']
 
 bot.run(token)
