@@ -41,10 +41,10 @@ class GameInfo:
             
     # Read config
     with open(pathlib.Path(SCRIPT_PATH, 'config.json'), 'r') as f:
-    data = json.load(f)
-    token = data['token']
-    update_frequency = data['update_frequency']
-    url = data['url']
+        data = json.load(f)
+        token = data['token']
+        update_frequency = data['update_frequency']
+        url = data['url']
 
     def __retrieve_rss_feed(self, search):
         params = urllib.parse.urlencode({'rss': 1, 'search': search})
