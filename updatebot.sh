@@ -1,9 +1,9 @@
 #!/bin/bash
 
-URL="https://discordapp.com/api/webhooks/469508611026976768/7yqzlk3Dt4089BVL1oYIDySD9pp2O_BVMPnAL9iC4X6PyyrSK2IpTgV65LUWFdmXQIGw"
+URL="https://discordapp.com/api/webhooks/469509650954452992/-kaxqQKrrtSP0UzKzGXwWGBK0tkRO1Y059XMmCJreQH9AtJMFoXfEsP0lG51p27fz2-O"
 
 inotifywait --monitor --format %f -e moved_to -e create ~/NSW/"0001 - (NSW eShop)"/UPDATES | while read FILE; 
 do
-  PAYLOAD="{\"content\":\"$FILE\"}"
-   curl -H "Content-Type: application/json" -X POST -d $PAYLOAD $URL; 
+  PAYLOAD="{\"content\":\"New Update NSP upload detected: $FILE\"}"
+   curl -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$URL"; 
 done
