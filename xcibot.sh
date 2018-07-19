@@ -4,6 +4,6 @@ URL="https://discordapp.com/api/webhooks/469509650954452992/-kaxqQKrrtSP0UzKzGXw
 
 inotifywait --monitor --format %f -e moved_to -e create ~/NSW/"0001 - (NSW XCI RAR)" | while read file; 
 do
-  PAYLOAD="{\"content\":\"***New XCI upload detected:*** $file\"}"
+  PAYLOAD="{\"content\":\"***New XCI upload detected:*** ```$file```\"}"
    curl -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$URL"; 
 done
