@@ -1,9 +1,9 @@
 #!/bin/bash
 
-URL="https://discordapp.com/api/webhooks/469260299774459906/-aIVW5t5UwV6fc_oBQYdNKDyrOvA48cJ4pgzPBWnsNlycfdbeiVuemVm-c_KkK1gtofn"
+URL="https://discordapp.com/api/webhooks/469509650954452992/-kaxqQKrrtSP0UzKzGXwWGBK0tkRO1Y059XMmCJreQH9AtJMFoXfEsP0lG51p27fz2-O"
 
 inotifywait --monitor --format %f -e moved_to -e create ~/NSW/"0001 - (NSW XCI RAR)" | while read file; 
 do
-  PAYLOAD="{\"content\":\"$file\"}"
-   curl -H "Content-Type: application/json" -X POST -d $PAYLOAD $URL; 
+  PAYLOAD="{\"content\":\"New DLC NSP upload detected: $file\"}"
+   curl -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$URL"; 
 done
