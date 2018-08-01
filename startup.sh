@@ -10,5 +10,5 @@ nohup ./demoupdbot.sh 0<&- &>/dev/null &
 nohup ./nsxbot.sh 0<&- &>/dev/null &
 nohup ./switchosbot.sh 0<&- &>/dev/null &
 nohup ./managerbot.sh 0<&- &>/dev/null &
-nohup ./nsxbot.sh 0<&- &>/dev/null &
+nohup ./emubot.sh 0<&- &>/dev/null &
 nohup ~/python/python3/bin/python3 ~/scripts/Gearhead/bot.py &
