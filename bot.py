@@ -12,7 +12,7 @@ import urllib.request
 import xml.etree.ElementTree
 
 SCRIPT_PATH = pathlib.Path(os.path.dirname(os.path.realpath(__file__)))
-token = 'qooMETCPOGNF_h41dWSiyByFbhShn3V-'
+token = 'NDY3MzI2MTYwMDA3NzI1MDY4.Dt2_Kg.GGtgoMZvA0xmmiCi4mNfvFJbwFY'
 update_frequency = 60 * 10
 
 class GameUpdate:
