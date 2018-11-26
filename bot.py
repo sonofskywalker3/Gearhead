@@ -12,7 +12,7 @@ import urllib.request
 import xml.etree.ElementTree
 
 SCRIPT_PATH = pathlib.Path(os.path.dirname(os.path.realpath(__file__)))
-token = ''
+token = 'qooMETCPOGNF_h41dWSiyByFbhShn3V-'
 update_frequency = 60 * 10
 
 class GameUpdate:
@@ -153,9 +153,9 @@ bot.loop.create_task(auto_update_check())
 print('Running...')
 
 # Read config
-with open(pathlib.Path(SCRIPT_PATH, 'config.json'), 'r') as f:
-    data = json.load(f)
-    token = data['token']
-    update_frequency = data['update_frequency']
+# with open(pathlib.Path(SCRIPT_PATH, 'config.json'), 'r') as f:
+#    data = json.load(f)
+#    token = data['token']
+#    update_frequency = data['update_frequency']
 
 bot.run(token)
